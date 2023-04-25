@@ -11,9 +11,19 @@ export default function Cross(props) {
         <h1>Cross App</h1>
       </div>
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <Parcel config={con} />
+        <Parcel
+          config={(): Promise<import("single-spa").ParcelConfigObject<{}>> =>
+            System.import("@app/app1")
+          }
+        />
 
-        <div></div>
+        <div>
+          <Parcel
+            config={(): Promise<import("single-spa").ParcelConfigObject<{}>> =>
+              System.import("@app/app2")
+            }
+          />
+        </div>
       </div>
     </section>
   );

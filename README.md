@@ -14,7 +14,7 @@ run, `yarn start --port 8500`
 
 ### App1/Module
 
-`port 8500`
+`port 8501`
 
 run, `yarn start --port 8501`
 

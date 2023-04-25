@@ -1,0 +1,45 @@
+<single-spa-router>
+  <!--
+
+    This is the single-spa Layout Definition for your microfrontends.
+    See https://single-spa.js.org/docs/layout-definition/ for more information.
+
+  -->
+
+  <!-- Example layouts you might find helpful:
+
+  <nav>
+    <application name="@org/navbar"></application>
+  </nav>
+  <route path="settings">
+    <application name="@org/settings"></application>
+  </route>
+
+  -->
+
+  <main>
+    <redirect from="/" to="/welcome"> </redirect>
+    <route path="/welcome">
+      <div
+        style="
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        "
+      >
+        <h1>Welcome to microfrontends</h1>
+        <a href="/app1" onclick="singleSpaNavigate(event)">app1</a>
+        <a href="/app2" onclick="singleSpaNavigate(event)">app2</a>
+        <a href="/cross" onclick="singleSpaNavigate(event)">cross-app</a>
+      </div>
+    </route>
+
+    <route path="/cross">
+      <application name="@app/cross-app"></application>
+    </route>
+    <route default>
+      <h1>404 Not Found</h1>
+      <a href="/" onclick="singleSpaNavigate(event)">Go to home</a>
+    </route>
+  </main>
+</single-spa-router>
